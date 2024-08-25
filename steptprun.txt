@@ -1,0 +1,53 @@
+To start ZooKeeper for Kafka, you can follow these steps:
+
+1. **Download Kafka**: Firstly, download the Kafka binary from the official Apache Kafka website: https://kafka.apache.org/downloads
+
+2. **Extract the Archive**: Once downloaded, extract the contents of the archive to a directory of your choice on your system.
+
+3. **Start ZooKeeper**: Kafka uses ZooKeeper to manage and coordinate its brokers, so you need to start ZooKeeper first. Navigate to the directory where you extracted Kafka in your terminal or command prompt.
+
+4. **Start ZooKeeper Server**: Run the ZooKeeper server using the following command:
+
+    ```
+    bin/zookeeper-server-start.sh config/zookeeper.properties
+    ```
+
+    On Windows:
+
+    ```
+    bin\windows\zookeeper-server-start.bat config\zookeeper.properties
+    ```
+
+    This command will start ZooKeeper using the configuration specified in `zookeeper.properties`.
+
+5. **Verify ZooKeeper is Running**: Once ZooKeeper is started, you should see output indicating that it has started successfully. You can also verify its status by checking the logs or running:
+
+    ```
+    bin/zookeeper-server-status.sh
+    ```
+
+6. **Start Kafka Server**: After ZooKeeper is running, you can start Kafka brokers. Open a new terminal or command prompt window and navigate to the Kafka directory.
+
+7. **Start Kafka Broker**: Run the Kafka server using the following command:
+
+    ```
+    bin/kafka-server-start.sh config/server.properties
+    ```
+
+    On Windows:
+
+    ```
+    bin\windows\kafka-server-start.bat config\server.properties
+    ```
+
+    This command will start Kafka using the configuration specified in `server.properties`.
+
+8. **Verify Kafka is Running**: Once Kafka is started, you should see output indicating that it has started successfully. You can also verify its status by checking the logs or running:
+
+    ```
+    bin/kafka-topics.sh --list --bootstrap-server localhost:9092
+    ```
+
+    This command lists the topics available in Kafka.
+
+That's it! ZooKeeper and Kafka are now running, and you can start using Kafka for your distributed messaging needs.
